@@ -1,4 +1,4 @@
-package net.anyjava.springdatajpasample.embeddeid;
+package net.anyjava.springdatajpasample.embeddedid;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -1,4 +1,4 @@
-package net.anyjava.springdatajpasample.embeddeid;
+package net.anyjava.springdatajpasample.embeddedid;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,6 +15,6 @@ public class PayRepositoryTest {
 
     @Test
     public void testFindById() {
-        payRepository.findById(new PayId());
+        payRepository.findById(new PayId(1L, 2L));
     }
 }

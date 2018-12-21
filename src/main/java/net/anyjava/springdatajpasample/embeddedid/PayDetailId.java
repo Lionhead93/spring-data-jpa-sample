@@ -1,14 +1,15 @@
-package net.anyjava.springdatajpasample.embeddeid;
+package net.anyjava.springdatajpasample.embeddedid;
 
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.persistence.EmbeddedId;
 import java.io.Serializable;
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Embeddable
+@NoArgsConstructor
 public class PayDetailId implements Serializable {
 
     @EqualsAndHashCode.Include
@@ -17,4 +18,10 @@ public class PayDetailId implements Serializable {
     @EqualsAndHashCode.Include
     @Column
     private Long payDetailId;
+
+    public PayDetailId(PayId payId,
+                       Long payDetailId) {
+        this.payId = payId;
+        this.payDetailId = payDetailId;
+    }
 }
