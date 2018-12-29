@@ -15,7 +15,7 @@ import javax.persistence.Table;
 public class Pay2 {
 
     @Id
-    private Long payId;
+    private Long payNumber;
 
     @Id
     private Long paySeq;

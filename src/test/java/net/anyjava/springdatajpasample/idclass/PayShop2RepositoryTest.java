@@ -24,12 +24,12 @@ public class PayShop2RepositoryTest {
     private TestEntityManager em;
 
     @Test
-    public void testSave() {
+    public void testSRve() {
         // given
-        Long payId = 1234555L;
-        PayDetail2 payDetail2 = payDetail2Repository.save(new PayDetail2(payId, 1L, 1L));
+        Long payNumber = 1234555L;
+        PayDetail2 payDetail2 = payDetail2Repository.save(new PayDetail2(payNumber, 1L, 1L));
 
-        PayShop2 payShop2 = new PayShop2(payId, 1L, 1L, "12312", "자장면집");
+        PayShop2 payShop2 = new PayShop2(payNumber, 1L, 1L, "12312", "자장면집");
         payShop2.setPayDetail2(payDetail2);
 
         // when
@@ -37,6 +37,6 @@ public class PayShop2RepositoryTest {
 
         // then
         em.flush();
-        assertThat(savedPayShop2.getPayId()).isEqualTo(payId);
+        assertThat(savedPayShop2.getPayNumber()).isEqualTo(payNumber);
     }
 }

@@ -13,7 +13,7 @@ import javax.persistence.*;
 public class PayShop2 {
 
     @Id
-    private Long payId;
+    private Long payNumber;
 
     @Id
     private Long paySeq;
@@ -28,18 +28,18 @@ public class PayShop2 {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = true)
     @JoinColumns(value = {
-            @JoinColumn(name = "payId", updatable = false, insertable = false),
+            @JoinColumn(name = "payNumber", updatable = false, insertable = false),
             @JoinColumn(name = "paySeq", updatable = false, insertable = false),
             @JoinColumn(name = "payDetailId", updatable = false, insertable = false)
     }, foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
     private PayDetail2 payDetail2;
 
-    public PayShop2(Long payId,
+    public PayShop2(Long payNumber,
                     Long paySeq,
                     Long payDetailId,
                     String shopNo,
                     String shopName) {
-        this.payId = payId;
+        this.payNumber = payNumber;
         this.paySeq = paySeq;
         this.payDetailId = payDetailId;
         this.shopNo = shopNo;

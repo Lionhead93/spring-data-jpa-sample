@@ -1,8 +1,6 @@
 package net.anyjava.springdatajpasample.idclass;
 
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import net.anyjava.springdatajpasample.embeddedid.PayShop;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -15,7 +13,7 @@ import java.util.List;
 public class PayDetail2 {
 
     @Id
-    private Long payId;
+    private Long payNumber;
 
     @Id
     private Long paySeq;
@@ -27,10 +25,10 @@ public class PayDetail2 {
     @org.hibernate.annotations.ForeignKey(name = "none")
     private List<PayShop2> payShops = new ArrayList<>();
 
-    public PayDetail2(Long payId,
+    public PayDetail2(Long payNumber,
                       Long paySeq,
                       Long payDetailId) {
-        this.payId = payId;
+        this.payNumber = payNumber;
         this.paySeq = paySeq;
         this.payDetailId = payDetailId;
     }

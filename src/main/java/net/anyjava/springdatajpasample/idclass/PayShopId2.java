@@ -12,7 +12,7 @@ public class PayShopId2 implements Serializable {
 
     @EqualsAndHashCode.Include
     @Id
-    private Long payId;
+    private Long payNumber;
 
     @EqualsAndHashCode.Include
     @Id

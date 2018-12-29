@@ -12,15 +12,15 @@ public class PayId2 implements Serializable {
 
     @EqualsAndHashCode.Include
     @Id
-    private Long payId;
+    private Long payNumber;
 
     @EqualsAndHashCode.Include
     @Id
     private Long paySeq;
 
-    public PayId2(Long payId,
+    public PayId2(Long payNumber,
                   Long paySeq) {
-        this.payId = payId;
+        this.payNumber = payNumber;
         this.paySeq = paySeq;
     }
 }

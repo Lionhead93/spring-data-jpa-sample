@@ -12,17 +12,20 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class PayId implements Serializable {
 
+    /**
+     * 결제번호 (비지니스적으로 유의미한 번호)
+     */
     @EqualsAndHashCode.Include
     @Column
-    private Long payId;
+    private Long payNumber;
 
     @EqualsAndHashCode.Include
     @Column
     private Long paySeq;
 
-    public PayId(Long payId,
+    public PayId(Long payNumber,
                  Long paySeq) {
-        this.payId = payId;
+        this.payNumber = payNumber;
         this.paySeq = paySeq;
     }
 }
