@@ -22,7 +22,7 @@ public class PayShop2 {
     private Long payDetailId;
 
     @Id
-    private String shopNo;
+    private String shopNumber;
 
     private String shopName;
 
@@ -37,12 +37,12 @@ public class PayShop2 {
     public PayShop2(Long payNumber,
                     Long paySeq,
                     Long payDetailId,
-                    String shopNo,
+                    String shopNumber,
                     String shopName) {
         this.payNumber = payNumber;
         this.paySeq = paySeq;
         this.payDetailId = payDetailId;
-        this.shopNo = shopNo;
+        this.shopNumber = shopNumber;
         this.shopName = shopName;
     }
 

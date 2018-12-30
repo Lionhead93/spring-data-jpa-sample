@@ -17,11 +17,11 @@ public class PayShopId implements Serializable {
 
     @EqualsAndHashCode.Include
     @Column
-    private Long shopNo;
+    private Long shopNumber;
 
     public PayShopId(PayDetailId payDetailId,
-                     Long shopNo) {
+                     Long shopNumber) {
         this.payDetailId = payDetailId;
-        this.shopNo = shopNo;
+        this.shopNumber = shopNumber;
     }
 }

@@ -24,5 +24,5 @@ public class PayShopId2 implements Serializable {
 
     @EqualsAndHashCode.Include
     @Id
-    private String shopNo;
+    private String shopNumber;
 }
