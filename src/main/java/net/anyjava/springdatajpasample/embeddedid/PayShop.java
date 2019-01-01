@@ -15,6 +15,7 @@ public class PayShop {
 
     private String shopName;
 
+    @MapsId(value = "payId")
     @ManyToOne(fetch = FetchType.LAZY)
     private Pay pay;
 

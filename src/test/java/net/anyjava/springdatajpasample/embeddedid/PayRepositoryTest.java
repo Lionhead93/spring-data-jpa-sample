@@ -27,7 +27,8 @@ public class PayRepositoryTest {
     @Test
     public void saveOne() {
         // given
-        PayShop payShop = new PayShop(new PayShopId(new PayDetailId(new PayId(123L, 1L), 1L), "9999"), "업소");
+        // PayId 를 왜 null ? @MapsId 로 할당됨
+        PayShop payShop = new PayShop(new PayShopId(new PayDetailId(null, 1L), "9999"), "업소");
         testEntityManager.persist(payShop);
 
         Pay pay = new Pay(new PayId(123L, 1L));
