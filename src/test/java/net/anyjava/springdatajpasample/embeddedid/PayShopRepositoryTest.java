@@ -17,7 +17,7 @@ public class PayShopRepositoryTest {
 
     @Test
     public void testFindById() {
-        assertThat(payShopRepository.findById(new PayShopId(new PayDetailId(new PayId(1L, 2L), 2L), 1234L))).isNotPresent();
+        assertThat(payShopRepository.findById(new PayShopId(new PayDetailId(new PayId(1L, 2L), 2L), "1234"))).isNotPresent();
     }
 
     @Test
@@ -25,7 +25,7 @@ public class PayShopRepositoryTest {
         // given
         PayShopId payShopId = new PayShopId(
                 new PayDetailId(new PayId(1L, 2L), 1L),
-                1234L
+                "1234"
         );
         PayShop payShop = new PayShop(payShopId, "자장면집");
 

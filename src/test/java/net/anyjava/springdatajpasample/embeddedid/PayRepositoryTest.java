@@ -27,7 +27,7 @@ public class PayRepositoryTest {
     @Test
     public void saveOne() {
         // given
-        PayShop payShop = new PayShop(new PayShopId(new PayDetailId(new PayId(123L, 1L), 1L), 9999L), "업소");
+        PayShop payShop = new PayShop(new PayShopId(new PayDetailId(new PayId(123L, 1L), 1L), "9999"), "업소");
         testEntityManager.persist(payShop);
 
         Pay pay = new Pay(new PayId(123L, 1L));
