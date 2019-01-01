@@ -3,8 +3,7 @@ package net.anyjava.springdatajpasample.embeddedid;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @Getter
 @Entity
@@ -16,9 +15,20 @@ public class PayShop {
 
     private String shopName;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Pay pay;
+
     public PayShop(PayShopId id,
                    String shopName) {
         this.id = id;
         this.shopName = shopName;
+    }
+
+    public void setPay(Pay pay) {
+        if (pay != null) {
+            pay.getPayShops().remove(this);
+        }
+        this.pay = pay;
+        this.pay.getPayShops().add(this);
     }
 }

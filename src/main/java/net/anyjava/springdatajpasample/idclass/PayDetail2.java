@@ -1,11 +1,13 @@
 package net.anyjava.springdatajpasample.idclass;
 
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
 @Entity
 @Table(name = "pay_detail_2")
 @IdClass(PayDetailId2.class)
@@ -31,9 +33,5 @@ public class PayDetail2 {
         this.payNumber = payNumber;
         this.paySeq = paySeq;
         this.payDetailId = payDetailId;
-    }
-
-    public void addPayShop2(PayShop2 payShop2) {
-        this.payShops.add(payShop2);
     }
 }

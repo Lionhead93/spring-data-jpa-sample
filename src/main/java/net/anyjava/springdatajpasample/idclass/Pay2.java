@@ -1,13 +1,14 @@
 package net.anyjava.springdatajpasample.idclass;
 
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import net.anyjava.springdatajpasample.embeddedid.PayId;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
+@Getter
 @IdClass(PayId.class)
 @Entity
 @Table(name = "pay_2")
@@ -19,4 +20,7 @@ public class Pay2 {
 
     @Id
     private Long paySeq;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "pay2")
+    private List<PayShop2> payShop2List = new ArrayList<>();
 }

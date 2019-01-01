@@ -1,12 +1,14 @@
 package net.anyjava.springdatajpasample.embeddedid;
 
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.io.Serializable;
 
+@Getter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Embeddable
 @NoArgsConstructor

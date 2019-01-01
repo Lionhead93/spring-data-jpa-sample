@@ -2,6 +2,7 @@ package net.anyjava.springdatajpasample.idclass;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import net.anyjava.springdatajpasample.embeddedid.Pay;
 
 import javax.persistence.*;
 
@@ -26,6 +27,9 @@ public class PayShop2 {
 
     private String shopName;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Pay2 pay2;
+
     @ManyToOne(fetch = FetchType.LAZY, optional = true)
     @JoinColumns(value = {
             @JoinColumn(name = "payNumber", updatable = false, insertable = false),
@@ -46,8 +50,19 @@ public class PayShop2 {
         this.shopName = shopName;
     }
 
+    public void setPay2(Pay2 pay2) {
+        if (pay2 != null) {
+            pay2.getPayShop2List().remove(this);
+        }
+        this.pay2 = pay2;
+        this.pay2.getPayShop2List().add(this);
+    }
+
     public void setPayDetail2(PayDetail2 payDetail2) {
+        if (payDetail2 != null) {
+            payDetail2.getPayShops().remove(this);
+        }
         this.payDetail2 = payDetail2;
-        this.payDetail2.addPayShop2(this);
+        this.payDetail2.getPayShops().add(this);
     }
 }
