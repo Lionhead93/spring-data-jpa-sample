@@ -10,4 +10,4 @@ Legacy System 이 JPA 를 사용하지 않는 상황에서 JPA 로 전환하려 
 
 해당 예제 소스는 아래 글을 위해 만들어 졌습니다.
 
-* [기술블로그 - Legacy DB의 JPA Entity Mapping (복합키 매핑 편)](https://woowabors.github.io/experience/2019/01/04/composit-key-jpa.html)
+* [기술블로그 - Legacy DB의 JPA Entity Mapping (복합키 매핑 편)](https://woowabros.github.io/experience/2019/01/04/composit-key-jpa.html)
